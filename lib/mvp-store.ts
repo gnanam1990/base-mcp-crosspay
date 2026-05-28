@@ -68,7 +68,12 @@ const seedItems: MvpItem[] = seedRecords.map((record, index) => ({
 }));
 
 function dbPath() {
-  return process.env.CROSSPAY_DATA_FILE || path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "crosspay-db.json");
+  if (process.env.CROSSPAY_DATA_FILE) {
+    return process.env.CROSSPAY_DATA_FILE;
+  }
+  return process.env.VERCEL
+    ? path.join("/tmp", "crosspay-db.json")
+    : path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "crosspay-db.json");
 }
 
 function readDb(): MvpDb {

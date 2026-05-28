@@ -1,0 +1,58 @@
+{
+  "repo": "base-mcp-crosspay",
+  "name": "CrossPay",
+  "shortName": "CP",
+  "api": "crosspay",
+  "category": "Group Payments",
+  "tagline": "AI-assisted bill splitting and group settlement on Base.",
+  "status": "Payments MVP foundation",
+  "mission": "Create shared payment requests, resolve human-readable names, track who paid, and settle small-group balances with Base Account approval.",
+  "primaryAction": "Create split",
+  "secondaryAction": "Resolve names",
+  "metrics": [
+    {
+      "label": "Open splits",
+      "value": "17",
+      "tone": "blue"
+    },
+    {
+      "label": "Settled",
+      "value": "203",
+      "tone": "green"
+    },
+    {
+      "label": "Pending USDC",
+      "value": "$84",
+      "tone": "amber"
+    }
+  ],
+  "workflow": [
+    "User describes a group expense in natural language.",
+    "Basenames, ENS names, cb.id, or addresses resolve to participants.",
+    "CrossPay creates requests and tracks status.",
+    "Each participant approves their share through Base Account."
+  ],
+  "tools": [
+    "create_bill_split",
+    "resolve_participants",
+    "get_split_status",
+    "prepare_settlement"
+  ],
+  "records": [
+    [
+      "Dinner split",
+      "3 people",
+      "2 paid"
+    ],
+    [
+      "Hackathon snacks",
+      "8 people",
+      "5 paid"
+    ],
+    [
+      "Workspace tools",
+      "4 people",
+      "settled"
+    ]
+  ]
+}

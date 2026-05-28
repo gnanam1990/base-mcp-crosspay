@@ -1,30 +1,34 @@
 # CrossPay
 
-AI-assisted bill splitting and group payments on Base.
+AI-assisted bill splitting and group settlement on Base.
 
-**Status:** Planned sixth build as the first social payments app.
+**Status:** Payments MVP foundation
 
-CrossPay lets users create group payment requests in natural language, resolve names, track approvals, and settle USDC on Base.
+Create shared payment requests, resolve human-readable names, track who paid, and settle small-group balances with Base Account approval.
 
-## Why It Exists
-Base MCP gives AI assistants access to Base Account actions such as balances, sends, swaps, contract calls, and x402 payments, with user approval for writes. This project turns that capability into a focused product for friends, small teams, event hosts, and Base users who need simple group settlement.
+## Current MVP
+- Base industrial-neon UI theme from the shared suite prompt.
+- Responsive dashboard with wallet/action controls, metrics, workflow, MCP tools, and live record surface.
+- Product status API at `/api/crosspay/status`.
+- Smoke checks for required dashboard data.
 
-## Core Capabilities
-- Mobile-first split creation flow with equal, custom, and percentage shares.
-- Name resolution for basenames, ENS, cb.id, and direct addresses.
-- Payment request contract or indexed offchain request ledger with onchain settlement.
-- Participant dashboard for pending, paid, and settled splits.
-- MCP tools for creating splits, checking payment status, and nudging participants.
+## Local Development
+```bash
+npm install
+npm run dev
+```
 
-## Roadmap Snapshot
-1. Build split creation UI and name resolution.
-2. Implement request tracking and participant status pages.
-3. Add USDC settlement flow with Base Account approval.
-4. Create MCP tools for natural-language split requests.
-5. Launch mobile demo, test groups, docs, and mainnet flow.
+Open `http://127.0.0.1:3000`.
 
-## Repository Status
-This repository is public from day one. It starts with product, architecture, roadmap, and demo documentation. Implementation commits should stay small and use conventional commit prefixes.
+## Checks
+```bash
+npm run typecheck
+npm run build
+npm run test:smoke
+```
+
+## Next Build Slice
+Wire the mocked dashboard data into real Base Sepolia reads, x402 payment verification, or contract prepare endpoints depending on this product's launch path.
 
 ## License
 MIT
